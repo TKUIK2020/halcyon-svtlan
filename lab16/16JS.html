@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS16</title>
+</head>
+<style>
+    body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+    button {
+        background-color: #DBE7F5;
+        border: 2px solid #88B8F6;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        color: black; 
+    }
+</style>
+<body>
+    <div id="app">
+        <app-corgi></app-corgi>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+
+        Vue.component('app-corgi',{
+            data:function(){
+                return{
+                    show: false   
+                }
+            }, template: `<div><p v-if="show"><img src="love.jpg" width="634px" height="693px"></p><p></p><button v-on:click="show=!show">{{show?'Спрятать и никому не показывать':'Показать любовь всей жизни'}}</button></div>`
+        })
+
+        var app = new Vue({
+            el: '#app',
+        })
+    </script>
+</body>
+</html>
